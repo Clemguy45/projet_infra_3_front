@@ -6,6 +6,7 @@ import {User} from "../models/user";
 import {Subscription} from "rxjs";
 import {HttpErrorResponse, HttpResponse} from "@angular/common/http";
 import {NotificationType} from "..//enum/notification-type.enum";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit,OnDestroy {
       this.router.navigateByUrl('/login')
     }
   }
-  public onLogin(user: User): void{
+  public onLogin(user: User, form: NgForm): void{
     this.showLoading = true;
     this.subscriptions.push(
 
