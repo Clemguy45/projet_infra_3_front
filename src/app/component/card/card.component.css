@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centre verticalement */
+  height: 100vh; /* Utilise la hauteur totale de la vue pour centrer verticalement */
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
+  gap: 10px;
+  width: 60%;
+  margin-top: 20px;
+}
+
+.card-grid img {
+  max-width: 100%;
+  height: auto;
+}
