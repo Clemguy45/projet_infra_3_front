@@ -27,7 +27,6 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
-<<<<<<< HEAD
   login(username: string, password: string): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/user/login`, { username, password })
       .pipe(response => {
@@ -37,26 +36,6 @@ export class AuthenticationService {
         this.loggedIn = true; // Mettez à jour le statut de connexion
         return response;
       });
-=======
-  public saveToken(token: string) : void {
-    this.token = token;
-    //save le token dans le local cache
-    localStorage.setItem('token', token);
-  }
-  public addUserToLocalCache(user: User) : void {
-    // json strigify pour transformer user en string
-    localStorage.setItem('user', JSON.stringify(user));
-  }
-  public getUserFromLocalCache() : any {
-    // @ts-ignore
-    return JSON.parse(localStorage.getItem('user'));
-  }
-  public loadToken(): void{
-    this.token = localStorage.getItem('token');
-  }
-  public getToken(): string {
-    return this.token;
->>>>>>> eab2d10578be65cfb6c9257d021c3ff40553ea7e
   }
 
   logout() {
