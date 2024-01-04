@@ -1,1 +1,3 @@
-<p>user works!</p>
+<h2 *ngIf="currentUser">Welcome, {{ currentUser.username }}!</h2>
+<img *ngIf="currentUser && currentUser.profileImageUrl" [src]="currentUser.profileImageUrl" alt="Profile Image" class="profile-image">
+<button *ngIf="currentUser" (click)="logout()" class="btn btn-danger logout-btn">Logout</button>

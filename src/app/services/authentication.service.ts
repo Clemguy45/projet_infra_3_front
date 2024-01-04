@@ -1,77 +1,47 @@
+// authentication.service.ts
 import { Injectable } from '@angular/core';
-import {environment} from "../../environments/environment";
-import {HttpClient, HttpErrorResponse, HttpResponse} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {User} from "../models/user";
-import { JwtHelperService } from "@auth0/angular-jwt";
-import {Role} from "../enum/Role";
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  public host = environment.apiUrl;
-  private token: any;
-  private loggedInUsername: any;
-  private jwtHelper = new JwtHelperService();
+  private apiUrl = environment.apiUrl;
+  private currentUserSubject: BehaviorSubject<any>;
+  public currentUser: Observable<any>;
 
-  constructor(private http: HttpClient) {}
+  private loggedIn: boolean = false;
 
-  public login(user: User): Observable<HttpResponse<any>> {
-
-    return this.http.post<HttpResponse<any>>(`${this.host}/user/login`, user, {observe: "response"}) // donne moi l'url , request body, et toute la reponse
+  constructor(private http: HttpClient) {
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
+    this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  public register(user: User): Observable<User> {
-
-      return this.http.post<User>(`${this.host}/user/register`, user)
-
+  isLoggedIn(): boolean {
+    return this.loggedIn;
   }
 
-  public logOut() : void {
-    this.token = null;
-    this.loggedInUsername = null;
-    // le cache
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
-    localStorage.removeItem('users');
+  getCurrentUser(): any {
+    return this.currentUserSubject.value;
   }
 
-  public saveToken(token: string) : void {
-    this.token = token;
-    //save le token dans le local cache
-    localStorage.setItem('token', token);
-  }
-  public addUserToLocalCache(user: User) : void {
-    // json strigify pour transformer user en string
-    localStorage.setItem('user', JSON.stringify(user));
-  }
-  public getUserFromLocalCache() : any {
-    return JSON.parse(localStorage.getItem('user'));
-  }
-  public loadToken(): void{
-    this.token = localStorage.getItem('token');
-  }
-  public getToken(): string {
-    return this.token;
+  login(username: string, password: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/login`, { username, password })
+      .pipe(response => {
+        // Store user details in local storage to keep user logged in
+        localStorage.setItem('currentUser', JSON.stringify(response));
+        this.currentUserSubject.next(response);
+        this.loggedIn = true; // Mettez à jour le statut de connexion
+        return response;
+      });
   }
 
-  public get isAdmin(): boolean {
-    return this.getUserFromLocalCache().role === Role.ADMIN;
-  }
-  public isUserLoggedIn(): boolean {
-    this.loadToken();
-    if (this.token != null && this.token != ''){
-      if (this.jwtHelper.decodeToken(this.token).sub != null || ''){ // si le token n'est pas null ou vide on continue
-        if (!this.jwtHelper.isTokenExpired(this.token)){
-          this.loggedInUsername = this.jwtHelper.decodeToken(this.token).sub
-          return true;
-        }
-      }
-    } else {
-      this.logOut();
-      return false;
-    }
-    return false;
+  logout() {
+    // Remove user details from local storage
+    localStorage.removeItem('currentUser');
+    this.currentUserSubject.next(null);
+    this.loggedIn = false; // Mettez à jour le statut de connexion
   }
 }

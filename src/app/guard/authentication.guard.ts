@@ -1,34 +1,26 @@
+// auth.guard.ts
 import { Injectable } from '@angular/core';
-import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import {AuthenticationService} from "../services/authentication.service";
-import {NotificationService} from "../services/notification.service";
-import {NotificationType} from "../enum/notification-type.enum";
+import { AuthenticationService } from '../services/authentication.service';
 
-
-
-// gere la securité et les redirection de page
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class AuthenticationGuard implements CanActivate {
+export class AuthGuard implements CanActivate {
+  constructor(private authService: AuthenticationService, private router: Router) {}
 
-  constructor(private authenticationService: AuthenticationService, private router: Router,
-              private notificationService: NotificationService) {
-  }
-
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):  boolean {
-    return this.isUserLoggedIn();
-  }
-
-  private isUserLoggedIn(): boolean {
-    if (this.authenticationService.isUserLoggedIn()){
-      console.log("coucou")
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    // Votre logique de vérification d'authentification ici
+    if (this.authService.isLoggedIn()) {
       return true;
     }
+
+    // Rediriger vers la page de connexion si l'utilisateur n'est pas authentifié
     this.router.navigate(['/login']);
-    this.notificationService.notify(NotificationType.ERROR, `Vous devez vous connectez pour acceder à cette page`.toUpperCase() )
     return false;
   }
-
 }
