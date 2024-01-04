@@ -18,8 +18,20 @@ export class UserService {
     this.currentUser = user;
   }
 
+<<<<<<< HEAD
   getCurrentUser(): any {
     return this.currentUser;
+=======
+  public addUsersToLocalCache(users: User[]): void {
+    localStorage.setItem('users', JSON.stringify(users));
+  }
+  public getUsersFromLocalCache(): any {
+    if (localStorage.getItem('users')){
+      // @ts-ignore
+      return JSON.parse(localStorage.getItem('users'));
+    }
+    return null;
+>>>>>>> eab2d10578be65cfb6c9257d021c3ff40553ea7e
   }
 
   getUserDetails(username: string): Observable<any> {

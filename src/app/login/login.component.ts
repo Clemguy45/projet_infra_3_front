@@ -1,9 +1,21 @@
+<<<<<<< HEAD
 // login.component.ts
 import { Component } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { DataService } from '../services/data.service';
+=======
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+import {AuthenticationService} from "../services/authentication.service";
+import {NotificationService} from "../services/notification.service";
+import {User} from "../models/user";
+import {Subscription} from "rxjs";
+import {HttpErrorResponse, HttpResponse} from "@angular/common/http";
+import {NotificationType} from "..//enum/notification-type.enum";
+import {NgForm} from "@angular/forms";
+>>>>>>> eab2d10578be65cfb6c9257d021c3ff40553ea7e
 
 @Component({
   selector: 'app-login',
@@ -22,6 +34,7 @@ export class LoginComponent {
     private dataService: DataService
   ) {}
 
+<<<<<<< HEAD
   onSubmit() {
     this.authService.login(this.username, this.password)
       .subscribe(
@@ -36,6 +49,31 @@ export class LoginComponent {
               // Redirect to user profile
               this.router.navigate(['/user', user.username]);
             });
+=======
+
+  constructor(private router: Router, private authenticationService: AuthenticationService,
+              private notificationService: NotificationService) { }
+
+  //redirige si l'user est deja login vers la mainpage
+  ngOnInit(): void {
+    if (this.authenticationService.isUserLoggedIn()){
+      this.router.navigateByUrl('/user/management');
+    } else {
+      this.router.navigateByUrl('/login')
+    }
+  }
+  public onLogin(user: User, form: NgForm): void{
+    this.showLoading = true;
+    this.subscriptions.push(
+
+      this.authenticationService.login(user).subscribe({
+        next:(response) => {
+          this.token = response.headers.get('Jwt-Token');
+          this.authenticationService.saveToken(this.token);
+          this.authenticationService.addUserToLocalCache(response.body);
+          this.router.navigateByUrl('/user/management');
+          this.showLoading = false;
+>>>>>>> eab2d10578be65cfb6c9257d021c3ff40553ea7e
         },
         (error) => {
           this.error = 'Invalid username or password';
