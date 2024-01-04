@@ -1,15 +1,11 @@
-/* user.component.css */
-.profile-container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-  }
-  
-  .profile-image {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .logout-btn {
-    margin-top: 20px;
-  }
+/* Ajoutez ces styles dans votre fichier CSS associé à user.component.css */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Pour occuper la hauteur complète de la vue */
+}
+
+.card {
+  width: 400px; /* Ajustez selon vos besoins */
+}
