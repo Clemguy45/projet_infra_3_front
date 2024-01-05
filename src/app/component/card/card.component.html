@@ -1,7 +1,13 @@
 <div class="container">
-<div class="card-grid">
-  <div *ngFor="let card of displayedCards">
-    <img [src]="card.card_images[0].image_url" alt="{{ card.name }}">
+  <div class="card-grid">
+    <div *ngFor="let card of displayedCards" class="card-item">
+      <img [src]="card.card_images[0].image_url" alt="{{ card.name }}">
+    </div>
   </div>
-</div>
+
+  <div class="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+  </div>
 </div>

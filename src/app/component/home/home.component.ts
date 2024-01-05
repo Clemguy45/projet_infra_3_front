@@ -8,12 +8,23 @@ import { CardService } from '../card/service/card.service';
 })
 export class HomeComponent implements OnInit {
   cards: any[] = [];
+  currentPage: number = 1;
+  pageSize: number = 8;
 
   constructor(private cardService: CardService) {}
 
   ngOnInit() {
-    this.cardService.getCards().subscribe((data: any) => {
-      this.cards = data;
+    this.loadCards();
+  }
+
+  loadCards() {
+    this.cardService.getAllCards().subscribe((data: any) => {
+      this.cards = data.data; // Utilisez data.data pour extraire les cartes du résultat API
     });
+  }
+
+  onPageChange(page: number) {
+    this.currentPage = page;
+    this.loadCards();
   }
 }

@@ -10,62 +10,40 @@ import { cloneDeep } from 'lodash';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  cards: any = {};
+   cards: any = {};
   displayedCards: any = [];
+  currentPage: number = 1;
+  pageSize: number = 6;
 
-  constructor(private cardService: CardService, private cardImageService: CardImageService) {}
+  constructor(private cardService: CardService) {}
 
   ngOnInit() {
-    console.log('ngOnInit is called');
-    this.cardService.getCards().subscribe(data => {
-      this.cards = data;
-      console.log("Cards:", this.cards)
-      this.shuffleAndDisplayCards();
-      console.log("display:", this.displayedCards)
-      //this.downloadAndSaveCardImages();
+    this.loadCards();
+  }
+
+  loadCards() {
+    this.cardService.getAllCards().subscribe((data: any) => {
+      this.cards = data.data;
+      this.updateDisplayedCards();
     });
   }
 
-  shuffleAndDisplayCards() {
-    // Convertir les valeurs de l'objet en tableau
-    const cardArray = cloneDeep(Object.values(this.cards.data));
-    
-    // Mélanger le tableau
-    const shuffledArray = this.shuffleArray(cardArray);
-
-    // Prendre les 8 premiers éléments
-    this.displayedCards = shuffledArray.slice(0, 8);
+  updateDisplayedCards() {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    this.displayedCards = this.cards.slice(startIndex, endIndex);
   }
 
-  // Fonction pour mélanger un tableau (utilisant l'algorithme de Fisher-Yates)
-  private shuffleArray(array: any[]) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-/* TODO chercher comment sauvegarder les images dans le serveur
-  downloadAndSaveCardImages() {
-    for (const card of this.cards.data) {
-      const imageUrl = card.card_images[0].image_url;
-      const localFileName = `assets/cards/${card.id}.jpg`;
-  
-      this.cardImageService.checkIfImageExistsLocally(localFileName).subscribe(existsLocally => {
-        if (!existsLocally) {
-          // Télécharge l'image
-          this.cardImageService.downloadCardImageFromHtmlPage(imageUrl).subscribe((blob: any) => {
-            // Sauvegarde l'image localement
-            this.cardImageService.saveCardImageLocally(blob, localFileName);
-          });
-        }
-      });
-      // Attribue le chemin local
-      card.localImageUrl = localFileName;
+  onPageChange(newPage: number) {
+    if (newPage >= 1 && newPage <= this.totalPages) {
+      this.currentPage = newPage;
+      this.updateDisplayedCards();
     }
   }
- */ 
+
+  get totalPages(): number {
+    return Math.ceil(this.cards.length / this.pageSize);
+  }
   
 }
 
