@@ -6,8 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
+import { LoginComponent } from './component/login/login.component';
+import { UserComponent } from './component/user/user.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({

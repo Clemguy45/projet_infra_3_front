@@ -6,7 +6,7 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {AuthenticationService} from "../app/services/authentication.service";
+import {AuthenticationService} from "../app/component/services/authentication.service";
 
 // intereceptor : intercept les requetes avant qu'elle atteigne le serveur et la transformer avant qu'on l'envoie au backend
 // on ajoute la token a la requete avant de l'envoyer au back , comme ca pas besoin de faire l'ajout dans chaque requete
