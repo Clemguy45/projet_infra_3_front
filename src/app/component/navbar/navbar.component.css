@@ -34,3 +34,79 @@
     margin-left: 10px;
     cursor: pointer;
 }
+
+.navbar {
+    background-color: #9a5833;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 50px;
+    padding: 0 20px;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list li {
+    cursor: pointer;
+}
+
+.navbar ul.nav-list li {
+    color: white;
+}
+
+.search-bar input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.icon-button img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Ajout de styles pour rendre la navbar responsive */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center; /* Alignement au centre pour les petits écrans */
+    }
+
+    .nav-list {
+        width: 100%;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .search-bar {
+        margin-top: 10px;
+    }
+
+    .buttons {
+        margin-top: 10px;
+    }
+
+    .icon-button img {
+        width: 20px;
+        height: 20px;
+    }
+}

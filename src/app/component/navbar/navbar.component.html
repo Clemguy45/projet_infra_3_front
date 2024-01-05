@@ -14,8 +14,14 @@
         <input type="text" placeholder="Recherche...">
     </div>
     <div class="buttons">
-        <button class="toggle-theme">Nuit/Jour</button>
-        <button class="sign-up">Sign Up</button>
-        <button class="login">Login</button>
+        <button class="icon-button" (click)="handleSignUpClick()">
+            <img src="assets/logo/jour-nuit-icone.png" alt="Sign Up" class="signup-icon">
+        </button>
+        <button class="icon-button" (click)="handleSignUpClick()">
+            <img src="assets/logo/sign-up-icone.png" alt="Sign Up" class="signup-icon">
+        </button>
+        <button class="icon-button" (click)="handleLoginClick()">
+            <img src="assets/logo/login-logo.png" alt="Login" class="login-icon">
+        </button>
     </div>
 </nav>
