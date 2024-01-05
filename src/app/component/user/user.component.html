@@ -1,1 +1,14 @@
-<p>user works!</p>
+<div class="container">
+    <div class="card">
+      <img *ngIf="currentUser?.profileImageUrl" [src]="currentUser?.profileImageUrl" alt="Profile Image" class="profile-image">
+      <div class="card-body">
+        <h5 class="card-title">{{ currentUser?.firstName }} {{ currentUser?.lastName }}</h5>
+        <p class="card-text">
+          <strong>Username:</strong> {{ currentUser?.username }}<br>
+          <strong>Email:</strong> {{ currentUser?.email }}<br>
+          <strong>Last Login Date:</strong> {{ currentUser?.lastLoginDate | date }}<br>
+        </p>
+      </div>
+    </div>
+  </div>
+  
