@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'https://projet-infra-3-backend-dev.azurewebsites.net/'
+    apiUrl: 'https://projet-infra-3-backend-dev.azurewebsites.net'
   };
   
   /*
