@@ -16,6 +16,7 @@ import { UserService } from './component/services/user.service';
 import { DataService } from './component/services/data.service';
 import { AuthGuard } from './guard/authentication.guard';
 import { CardService } from './component/card/service/card.service';
+import { RegisterComponent } from './component/register/register.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CardService } from './component/card/service/card.service';
     CardComponent,
     HomeComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
