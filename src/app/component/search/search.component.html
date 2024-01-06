@@ -1,0 +1,11 @@
+<div class="input-group">
+    <div class="form-outline">
+        <input type="search" class="form-control" placeholder="Rechercher" [(ngModel)]="cardName" />
+    </div>
+    <button class="input-group-text border-0 bg-transparent" (click)="search()">
+        <i class="fas fa-search"></i>
+    </button>
+    <div *ngFor="let result of searchResults">
+        {{ result.card_name }}
+    </div>
+</div>
