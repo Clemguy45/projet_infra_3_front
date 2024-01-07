@@ -70,6 +70,11 @@ L'application est hébergée sur Azure et maintenue à jour grâce à la pipelin
 
 Vous pouvez retrouver l'entièreté du site [en cliquant ici](https://black-bay-0d4645710.4.azurestaticapps.net/)
  
+
+## Diagrammes
+
+Le diagramme est disponible dans le **back-end** à la racine de ce projet.
+
 ## Auteurs
 * GUYOT Clément
 * POUDROUX Mickael
