@@ -14,6 +14,7 @@ export class NavbarComponent {
   handleSignUpClick() {
     // Logique pour gérer le clic sur le bouton d'inscription
     console.log('Sign Up button clicked');
+    this.router.navigate(['/register']);
 }
 
 handleLoginClick() {
