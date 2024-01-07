@@ -7,9 +7,16 @@
 Dans ce projet, nous regroupons l'ensemble des cartes existantes à l'aide de l'API `Yu-Gi-Oh! API by YGOPRODeck`
 
 
+## Initilisation
+
+Pour le bon fonctionnement des fonctionnalités du projet, éxécutez la commande suivante : 
+```
+npm install
+```
+
 ## Serveur
 
-Pour commencer, si vous utilisez le code source du projet, lancez la commande suivante pour démarrer le serveur :
+Si vous utilisez le code source du projet, lancez la commande suivante pour démarrer le serveur :
 ```
 ng serve
 ```
@@ -29,7 +36,7 @@ Vous pouvez consulter les cartes en naviguant au travers des pages ***suivant***
 
 Dans la barre de navigation se trouve une barre de recherche permettant d'accéder aux informations d'une carte en fonction de son nom.
 
-***Attention** l'API ne permet pas une recherche optimale, il faudra renseigner un nom complet et sans faute de carte. Pour s'exercer, `Dark Magician` est un nom de carte valide.*
+***Attention** l'API ne permet pas une recherche optimale, il faudra renseigner un nom **anglophone** complet et sans faute de carte. Pour s'exercer, `Dark Magician` est un nom de carte valide.*
 
 La barre de recherche présente également les boutons suivants : 
 
