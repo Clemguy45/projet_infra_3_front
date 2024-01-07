@@ -1,30 +1,61 @@
-# ProjetInfra3Frontend
+# Projet Infra 3 Front-end
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+*Ce projet a été généré par [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.* 
 
-## Development server
+*Ce README ne concerne que la partie **front-end**, il est donc demandé de consulter le README de la partie **back-end** pour que l'intégralité du projet soit fonctionnel*
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Dans ce projet, nous regroupons l'ensemble des cartes existantes à l'aide de l'API `Yu-Gi-Oh! API by YGOPRODeck`
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Serveur
 
-## Build
+Pour commencer, si vous utilisez le code source du projet, lancez la commande suivante pour démarrer le serveur :
+```
+ng serve
+```
+Dirigez-vous maintenant à l'adresse [http://localhost:4200/](`http://localhost:4200/`).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Page d'accueil
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Vous êtes désormais sur la page d'accueil qui regroupe l'ensemble des cartes générées par l'API.
 
-## Running end-to-end tests
+Vous pouvez consulter les cartes en naviguant au travers des pages ***suivant*** ou ***précédent***.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+*Les cartes sont triées de manière alphabétique*
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Barre de navigation
 
-## Workflow
-test
+Dans la barre de navigation se trouve une barre de recherche permettant d'accéder aux informations d'une carte en fonction de son nom.
+
+***Attention** l'API ne permet pas une recherche optimale, il faudra renseigner un nom complet et sans faute de carte. Pour s'exercer, `Dark Magician` est un nom de carte valide.*
+
+La barre de recherche présente également les boutons suivants : 
+
+* Connexion : <img src="src/assets/logo/login-logo.png" alt="logo" width="20" height="20">
+* Register : <img src="src/assets/logo/sign-up-icone.png" alt="logo" width="20" height="20">
+
+
+*Pour revenir à l'accueil, cliquez sur le logo* <img src="src/assets/logo/yu-gi-oh-logo.jpg" alt="logo" width="60" height="30"> *tout à gauche de la barre de navigation*
+
+## Page Login 
+
+Pour vous **connecter**, un compte administrateur est mis à votre disposition avec les identifiants suivants :
+* username : **`admin`**
+* mot de passe : **`admin`** 
+
+Une fois connecté, vous serez redirigez vers la page concernant vos informations personnelles.
+
+## Page Register
+
+Pour vous **enregistrer**, il faudra renseigner des champs d'inscription. Une fois cela fait, vous pourez vous connectez avec les identifiants que vous venez de créer.
+
+## Versionning 
+
+Pour le versionning, nous avons utilisé **GitHub**. les branches sont visibles depuis le repository **GitHub**
+
+## Auteurs
+GUYOT Clément
+POUDROUX Mickael
+
