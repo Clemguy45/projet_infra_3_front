@@ -65,5 +65,5 @@ Pour le versionning, nous avons utilisé **GitHub**. les branches sont visibles 
 ## Auteurs
 * GUYOT Clément
 * POUDROUX Mickael
-* JESAISPLUS Lauriche
+* TSONGOUANG Lauriche
 * BLOT Benjamin
