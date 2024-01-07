@@ -2,7 +2,7 @@
 
 *Ce projet a été généré par [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.*
 
-*Ce README ne concerne que la partie **front-end** ; il est donc demandé de consulter le README de la partie **back-end** pour que l'intégralité du projet soit fonctionnelle.*
+*Ce README ne concerne que la partie **front-end**. Il est donc demandé de consulter le README de la partie **back-end** pour que l'intégralité du projet soit fonctionnelle.*
 
 Dans ce projet, nous regroupons l'ensemble des cartes existantes à l'aide de l'API `Yu-Gi-Oh! API by YGOPRODeck`
 
@@ -17,6 +17,7 @@ npm install
 ## Serveur
 
 Si vous utilisez le code source du projet, lancez la commande suivante pour démarrer le serveur :
+
 ```
 ng serve
 ```
@@ -61,7 +62,7 @@ Pour vous **enregistrer**, il faudra renseigner des champs d'inscription. Une fo
 
 ## Versioning 
 
-Pour le versioning, nous avons utilisé **GitHub**. Les branches sont visibles depuis le repository **GitHub**.
+Pour le versioning, nous avons utilisé **GitHub**. Les branches sont visibles depuis le repository **GitHub** [en cliquant ici](https://github.com/Clemguy45/projet_infra_3_front).
 
 ## Azure 
 
