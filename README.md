@@ -56,6 +56,7 @@ Pour vous **enregistrer**, il faudra renseigner des champs d'inscription. Une fo
 Pour le versionning, nous avons utilisé **GitHub**. les branches sont visibles depuis le repository **GitHub**
 
 ## Auteurs
-GUYOT Clément
-POUDROUX Mickael
-
+* GUYOT Clément
+* POUDROUX Mickael
+* JESAISPLUS Lauriche
+* BLOT Benjamin
