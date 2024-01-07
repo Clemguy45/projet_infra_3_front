@@ -1,0 +1,54 @@
+<!-- card-details.component.html -->
+<div class="container">
+  <div class="image-container">
+    <img [src]="cardDetails?.card_images[0].image_url" alt="{{ cardDetails?.name }}">
+  </div>
+
+  <div class="attribute-container">
+    <div *ngIf="cardDetails?.type !== 'Spell Card' && cardDetails?.type !== 'Trap Card'; else spellTrapAttributes">
+      <div class="attribute-column">
+        <div class="row">
+          <p><strong>Name:</strong> {{ cardDetails?.name }}</p>
+          <p><strong>Type:</strong> {{ cardDetails?.type }}</p>
+          <p><strong>Frame Type:</strong> {{ cardDetails?.frameType }}</p>
+          <p><strong>Description:</strong> {{ cardDetails?.desc }}</p>
+          <p><strong>Attribute:</strong> {{ cardDetails?.attribute }}</p>
+        </div>
+        <div class="row">
+          <p><strong>ATK:</strong> {{ cardDetails?.atk }}</p>
+          <p><strong>DEF:</strong> {{cardDetails?.def }}</p>
+          <p><strong>Level:</strong> {{ cardDetails?.level }}</p>
+          <p><strong>Race:</strong> {{ cardDetails?.race }}</p>
+          <p><strong>Archetype:</strong> {{ cardDetails?.archetype }}</p>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #spellTrapAttributes>
+      <div class="attribute-column">
+        <div class="row">
+          <p><strong>Name:</strong> {{ cardDetails?.name }}</p>
+          <p><strong>Type:</strong> {{ cardDetails?.type }}</p>
+          <p><strong>Frame Type:</strong> {{ cardDetails?.frameType }}</p>
+          <p><strong>Description:</strong> {{ cardDetails?.race }}</p>
+        </div>
+        <div class="row">
+          <p><strong>Race:</strong> {{ cardDetails?.desc }}</p>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="card-sets-container">
+    <div class="grid-container">
+      <div class="grid-item" *ngFor="let cardSet of cardDetails?.card_sets">
+        <div class="card-set">
+          <p><strong>Name:</strong> {{ cardSet.set_name }}</p>
+          <p><strong>Code:</strong> {{ cardSet.set_code }}</p>
+          <p><strong>Rarity:</strong> {{ cardSet.set_rarity }}</p>
+          <p><strong>Price:</strong> {{ cardSet.set_price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

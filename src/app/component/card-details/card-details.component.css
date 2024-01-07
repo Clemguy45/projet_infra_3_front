@@ -1,0 +1,65 @@
+/* card-details.component.css */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.image-container {
+  flex: 0 0 60%; /* 60% width for image container */
+}
+
+.attribute-container {
+  flex: 0 0 30%; /* 30% width for attribute container */
+  background-color: white; /* White background for attribute container */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.attribute-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+.card-sets-container {
+  flex: 0 0 100%; /* Full width for card sets container */
+  margin-top: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-item {
+  background-color: white; /* White background for card sets */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.card-set {
+  margin-bottom: 10px;
+}
+
+/* Add any other styles you need */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .image-container,
+  .attribute-container,
+  .card-sets-container {
+    flex: 0 0 100%;
+  }
+}

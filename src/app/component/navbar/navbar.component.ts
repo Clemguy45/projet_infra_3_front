@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-navbar',
@@ -13,6 +14,7 @@ export class NavbarComponent {
   handleSignUpClick() {
     // Logique pour gérer le clic sur le bouton d'inscription
     console.log('Sign Up button clicked');
+    this.router.navigate(['/register']);
 }
 
 handleLoginClick() {

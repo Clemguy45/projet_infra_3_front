@@ -16,6 +16,10 @@ import { UserService } from './component/services/user.service';
 import { DataService } from './component/services/data.service';
 import { AuthGuard } from './guard/authentication.guard';
 import { CardService } from './component/card/service/card.service';
+import { RegisterComponent } from './component/register/register.component';
+import { SearchComponent } from './component/search/search.component';
+import { SearchService } from './component/services/search.service';
+import { CardDetailsComponent } from './component/card-details/card-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { CardService } from './component/card/service/card.service';
     CardComponent,
     HomeComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    RegisterComponent,
+    SearchComponent,
+    CardDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,8 @@ import { CardService } from './component/card/service/card.service';
     UserService,
     DataService,
     AuthGuard,
-    CardService
+    CardService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })

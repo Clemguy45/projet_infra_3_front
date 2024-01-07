@@ -6,8 +6,8 @@
   </div>
 
   <div class="pagination">
-    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <button class="btn btn-light" (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Précédent</button>
     <span>Page {{ currentPage }} of {{ totalPages }}</span>
-    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+    <button class="btn btn-light" (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Suivant</button>
   </div>
 </div>
