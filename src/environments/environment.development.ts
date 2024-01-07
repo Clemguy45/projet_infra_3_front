@@ -4,9 +4,9 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'https://orange-tree-09a453110.4.azurestaticapps.net'
+    apiUrl: 'https://projet-infra-3-backend-prod.azurewebsites.net'
   };
-  
+
   /*
    * For easier debugging in development mode, you can import the following file
    * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
@@ -15,4 +15,3 @@ export const environment = {
    * on performance if an error is thrown.
    */
   // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
-  
