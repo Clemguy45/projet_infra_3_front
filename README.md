@@ -1,4 +1,4 @@
-# Projet Infra 3 Front-end
+# Projet Infra 3 Front-end V.1.0.0
 
 *Ce projet a été généré par [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.*
 
@@ -38,6 +38,7 @@ Vous pouvez consulter les cartes en naviguant au travers des pages ***suivantes*
 
 Dans la barre de navigation se trouve une barre de recherche permettant d'accéder aux informations d'une carte en fonction de son nom.
 
+
 ***Attention**, l'API ne permet pas une recherche optimale, il faudra renseigner un nom **anglophone** complet et sans faute d'orthographe. Pour s'exercer, `Dark Magician` est un nom de carte valide.*
 
 La barre de recherche présente également les boutons suivants :
@@ -47,6 +48,8 @@ La barre de recherche présente également les boutons suivants :
 
 
 *Pour revenir à l'accueil, cliquez sur le logo* <img src="src/assets/logo/yu-gi-oh-logo.jpg" alt="logo" width="60" height="30"> *tout à gauche de la barre de navigation*
+
+*Toutes les fonctionnalités de la navbar ne sont pas opérationnelles dans la v1.0.0 de l'application. Seulement celles mentionnées plus haut dans cette section sont accessibles*
 
 ## Page Login 
 
@@ -68,7 +71,7 @@ Pour le versioning, nous avons utilisé **GitHub**. Les branches sont visibles d
 
 L'application est hébergée sur Azure et maintenue à jour grâce à la pipeline hébergée avec GitHub Actions.
 
-Vous pouvez retrouver l'entièreté du site [en cliquant ici](https://black-bay-0d4645710.4.azurestaticapps.net/)
+Vous pouvez retrouver l'entièreté du site [en cliquant ici](https://orange-tree-09a453110.4.azurestaticapps.net/)
  
 
 ## Diagrammes
