@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from './service/card.service';
-import { CardImageService } from './service/card-image.service';
-import { cloneDeep } from 'lodash';
 
 
 @Component({
