@@ -1,0 +1,29 @@
+<nav class="navbar">
+    <div class="logo">
+        <a routerLink="/">
+            <img src="assets/logo/yu-gi-oh-logo.jpg" alt="Logo Yu-Gi-Oh" style="height: 54px; width: auto;">
+        </a>
+    </div>
+    <ul class="nav-list">
+        <li>Decks</li>
+        <li>Articles</li>
+        <li>Card Database</li>
+        <li>Community</li>
+        <li>Premium</li>
+        <li>Shuffle</li>
+    </ul>
+    <div class="search-bar">
+        <app-search></app-search>
+    </div>
+    <div class="buttons">
+        <button class="icon-button" (click)="handleSignUpClick()">
+            <img src="assets/logo/jour-nuit-icone.png" alt="Sign Up" class="signup-icon">
+        </button>
+        <button class="icon-button" (click)="handleSignUpClick()">
+            <img src="assets/logo/sign-up-icone.png" alt="Sign Up" class="signup-icon">
+        </button>
+        <button class="icon-button" (click)="handleLoginClick()">
+            <img src="assets/logo/login-logo.png" alt="Login" class="login-icon">
+        </button>
+    </div>
+</nav>

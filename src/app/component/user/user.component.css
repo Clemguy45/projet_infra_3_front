@@ -1,0 +1,11 @@
+/* Ajoutez ces styles dans votre fichier CSS associé à user.component.css */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Pour occuper la hauteur complète de la vue */
+}
+
+.card {
+  width: 400px; /* Ajustez selon vos besoins */
+}

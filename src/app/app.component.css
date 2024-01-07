@@ -1,0 +1,14 @@
+body {
+    background: repeating-linear-gradient(
+        45deg,
+        #f5f5dc,
+        #f5f5dc 10px,
+        #e6e6c9 10px,
+        #e6e6c9 20px
+    );
+    margin: 0;
+}
+
+.content {
+    padding: 20px; /* Ajoutez une marge à votre contenu pour éviter de se confondre avec le fond granulé */
+}
